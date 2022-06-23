@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who am I?</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c01b52cc25.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+
+        <i class="fa-solid fa-ranking-star openStatistics"></i>
+        <h1>Who am I?</h1>
+        <i class="fa-solid fa-question openHowToPlay"></i>
+
+    </header>
+
+    <section class="howToPlay">
+
+        <div class="howToPlayHeader">
+
+            <div></div>
+            <h1>How to play</h1>
+            <i class="fa-solid fa-x exit"></i>
+
+        </div>
+
+        <div class="instructionsWrapper">
+
+            <div>
+
+                <i class="fa-solid fa-futbol"></i>
+                <p>The aim of the game is guess the footballer within 6 attempts.</p>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-futbol"></i>
+                <p>You will be given a list of 5 players that have played with this footballer.</p>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-futbol"></i>
+                <p>You can either enter the footballers full name or last name.</p>
+                
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-futbol"></i>
+                <p>Share your score with your friends to see if they can beat you.</p>
+
+            </div>
+
+            <div>
+
+                <a class="exit" href="#">Play</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mainGame">
+
+        <h1>In my footballing career I've played with...</h1>
+
+        <ol>
+
+           <li class="one"></li>
+           <li class="two"></li>
+           <li class="three"></li>
+           <li class="four"></li>
+           <li class="five"></li>
+
+        </ol>
+
+        <ul id="list">
+
+            
+        </ul>
+
+        <div class="search">
+
+            <input id="result" type="text" placeholder="Enter name">
+            <a id="submit" href="#">Submit</a>
+
+        </div>
+
+        <div class="answeredCorrect">
+
+            <h1 class="successMessage"></h1>
+            <a href="#">Share<i class="fa-solid fa-share-nodes"></i></a>
+
+        </div>
+
+        <div class="failed">
+
+            <h1 class="failMessage"></h1>
+            <h2 class="todaysFootballer"></h2>
+            <a href="#">Share<i class="fa-solid fa-share-nodes"></i></a>
+
+
+        </div>
+
+    </section>
+
+    <section class="statistics">
+
+        <h1>Statistics <i class="fa-solid fa-x exit"></i></h1>
+        <span class="gamesPlayed">Games played: 0</span>
+        <span class="winPct">Win %: 0</span>
+        <span class="currentStreak">Current streak: 0</span>
+        
+
+    </section>
+    
+    <script src="main.js"></script>
+
+</body>
+</html>

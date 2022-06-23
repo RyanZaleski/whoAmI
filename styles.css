@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    background: rgb(29, 29, 29);
+    color: white;
+	font-family: 'Prompt', sans-serif;
+	
+}
+
+@media screen and (max-width:767px){
+
+	/****** HEADER ******/
+
+	header {
+		border-bottom: 2px solid white;
+		display: flex;
+		padding: 20px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header h1 {
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 0.20rem;
+	}
+
+	header i {
+		color: white;
+		font-size: 1.5rem;
+	}
+
+	/***** MAIN GAME SCREEN ******/
+
+	.howToPlay {
+		border: 1px solid white;
+		padding: 20px;
+		margin: 20px;
+		display: none;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.howToPlay i {
+		color: rgb(125, 125, 125);
+		font-size: 1.2rem;
+	}
+
+	.instructionsWrapper i {
+		color: rgb(125, 125, 125);
+		font-size: 1rem;
+	} 
+
+	.instructionsWrapper{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.instructionsWrapper div {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.howToPlay p {
+		line-height: 1.25rem;
+		font-weight: 200;
+	}
+
+	.howToPlayHeader {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+	}
+
+	.howToPlayHeader h1 {
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.15rem;
+	}
+
+	.howToPlay a {
+		border-radius: 6px;
+		margin: 0 auto;
+		background: rgb(0, 72, 255);
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 14px 28px;
+		font-weight: 600;
+		letter-spacing: 0.20rem;
+	}
+
+	/***** MAIN GAME *******/
+
+	.mainGame {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.mainGame h1 {
+		font-size: 1.4rem;
+		text-align: center;
+		font-weight: 400;
+		line-height: 1.75rem;
+		width: 80%;
+	}
+
+	.mainGame ol {
+	    display: flex;
+		flex-direction: column;
+		gap: 5px;
+		list-style: decimal;
+	}
+
+
+	.mainGame ol li {
+		color: white;
+		font-size: 1rem;
+		font-weight: 300;
+	}
+
+	.mainGame ul {
+		display: flex;
+		list-style: decimal;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.wrong {
+		color: red;
+		text-decoration: line-through;
+		font-weight: 200;
+	}
+
+	.correct {
+		color: rgb(0, 255, 21);
+	}
+
+	.search {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		text-align: center;
+	}
+
+	.search input {
+		border: none;
+		background: rgba(92, 92, 92, 0.642);
+		text-align: center;
+		padding: 12px 25px;
+		border-radius: 8px;
+		
+	}
+
+	input::placeholder{
+		letter-spacing: 0.05rem;
+	}
+
+	input[type=text]{
+		color: white;
+		opacity: 1;
+		letter-spacing: 0.05rem;
+	}
+
+	.search a {
+		color: white;
+		text-decoration: none;
+		padding: 12px 25px;
+		border-radius: 8px;
+		background:rgb(0, 72, 255);
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+	}
+
+	.answeredCorrect, .failed {
+		display: none;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.answeredCorrect a, .failed a {
+		color: white;
+		text-decoration: none;
+		padding: 12px 25px;
+		border-radius: 8px;
+		background:rgb(0, 72, 255);
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		display: flex;
+		gap: 10px;
+	}
+
+	.todaysFootballer {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+
+	.failed span {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	/***** STATISTICS *****/
+
+	.statistics {
+		display: none;
+		flex-direction: column;
+		gap: 15px;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 25px;
+		font-size: 1.25rem;
+		font-weight: 300;
+		letter-spacing: 0.08rem;
+		border: 1px solid white;
+		margin: 25px;
+	}
+
+	
+
+	.statistics h1 {
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		text-transform: uppercase;
+		font-weight: 800;
+	
+	}
+
+	.statistics i {
+		color: rgb(125, 125, 125);
+		font-size: 1.2rem;
+	}
+
+	
+		
+
+
+
+
+
+}
