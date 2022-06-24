@@ -143,13 +143,11 @@ function updateNumOfGuesses(){
 }
 
 function updateStatsModal(){
-    const currentStreak = window.localStorage.getItem('currentStreak');
-    const totalWins = window.localStorage.getItem('totalWins');
-    const totalGames = window.localStorage.getItem('totalGames');
-    
+    const currentStreak = window.localStorage.getItem('currentStreak') || 0;
+    const totalWins = window.localStorage.getItem('totalWins') || 0;
+    const totalGames = window.localStorage.getItem('totalGames') || 0;
     document.querySelector('.gamesPlayed').textContent = `Games played: ${totalGames}`
     document.querySelector('.currentStreak').textContent = `Current streak: ${currentStreak}`
-
     const winPct = Math.round((totalWins / totalGames) * 100 || 0)
     document.querySelector('.winPct'). textContent = `Win percentage: ${winPct}%`
 }
@@ -161,16 +159,16 @@ function preserveGameState(){
 }
 
 function loadLocalStorage(){
-    currentFootballerIndex = Number(window.localStorage.getItem('currentFootballerIndex')) || 0
-    guessedFootballers = JSON.parse(window.localStorage.getItem('guessedFootballers')) || 0
+    currentFootballerIndex = Number(window.localStorage.getItem('currentFootballerIndex')) || currentFootballerIndex
+    guessedFootballers = JSON.parse(window.localStorage.getItem('guessedFootballers')) || guessedFootballers
     currentFootballer = footballers[currentFootballerIndex]
 
     const incorrectAnswers = window.localStorage.getItem('incorrectAnswers');
-    if (numOfGuesses < 7) {
+    if (numOfGuesses > 1) {
     document.getElementById('list').innerHTML = incorrectAnswers;
     } else {
         document.getElementById('list').innerHTML = '';
-        window.localStorage.setItem('numOfGuesses', 0)
+        
     }
 }
 
@@ -198,28 +196,25 @@ if((inputedAnswer.toLowerCase() !== currentFootballer.fullName.toLowerCase()) &&
     updateNumOfGuesses();
 
 } else {
-    li.appendChild(document.createTextNode(inputedAnswer)); // if the answer is correct, print that answer to the dom with the class of 'correct'
+    ul.appendChild(li) // if the answer is correct, print that answer to the dom with the class of 'correct'
+    li.appendChild(document.createTextNode(inputedAnswer));
     li.setAttribute('class', 'correct');
-    ul.appendChild(li)
     document.querySelector('.answeredCorrect').style.display = 'flex';
     document.querySelector('.search').style.display = 'none';
     initLocalStorage();
     updateFootballerIndex();
     updateTotalGames();
     showResult();
+    window.localStorage.setItem('numOfGuesses', Number(1))
+}
+
     
-
-
     if (numOfGuesses === 1){
     document.querySelector('.successMessage').innerText = `Congratulations, you guessed todays footballer in ${numOfGuesses} attempt` }
     else {
         document.querySelector('.successMessage').innerText = `Congratulations, you guessed todays footballer in ${numOfGuesses} attempts` 
-        
     }
-    
-    
-    
-}
+
 
 if (numOfGuesses > 6) {
     updateTotalGames()
@@ -231,7 +226,6 @@ if (numOfGuesses > 6) {
     document.querySelector('.search').style.display = 'none';
     document.querySelector('.failMessage').innerText = 'Unlucky, better lucky next time!';
     document.querySelector('.todaysFootballer').innerHTML = `Today's footballer was <span>${currentFootballer.fullName}</span>`;
-    
     
 }
 }
