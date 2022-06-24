@@ -81,7 +81,7 @@ lastName: 'Rodriguez',
 listOfPlayers: ['Lucas Digne', 'Dimitar Berbatov', 'Gareth Bale', 'Anthony Martial', 'Eden Hazard', 'Javier Hernandez', 'Christiano Ronaldo', 'Thibaut Courtois', 'Ramadel Falcao', 'Jordan Pickford']
 }
 
-const footballers = [ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez];
+const footballers = [ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez, ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez, ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez, ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez, ibrahimavic, ferdinand, fabregas, milner, lampard, lukaku, lewandowski, rodriguez];
 
 let currentFootballerIndex = 0;
 let totalWins = 0;
@@ -89,7 +89,8 @@ let totalGames = 0;
 let currentStreak = 0;
 let numOfGuesses = 1
 let currentFootballer = footballers[currentFootballerIndex]
-let guessedFootballers = [[]]
+let guessedFootballers = [[]];
+
 
 initLocalStorage();
 loadLocalStorage();
@@ -168,7 +169,6 @@ function loadLocalStorage(){
     document.getElementById('list').innerHTML = incorrectAnswers;
     } else {
         document.getElementById('list').innerHTML = '';
-        
     }
 }
 
@@ -210,9 +210,9 @@ if((inputedAnswer.toLowerCase() !== currentFootballer.fullName.toLowerCase()) &&
 
     
     if (numOfGuesses === 1){
-    document.querySelector('.successMessage').innerText = `Congratulations, you guessed todays footballer in ${numOfGuesses} attempt` }
+    document.querySelector('.successMessage').innerText = `Correct, you guessed todays footballer in ${numOfGuesses} attempt.` }
     else {
-        document.querySelector('.successMessage').innerText = `Congratulations, you guessed todays footballer in ${numOfGuesses} attempts` 
+        document.querySelector('.successMessage').innerText = `Correct, you guessed todays footballer in ${numOfGuesses} attempts.` 
     }
 
 

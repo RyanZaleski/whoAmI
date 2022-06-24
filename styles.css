@@ -47,7 +47,10 @@ table {
 }
 
 body {
-    background: rgb(29, 29, 29);
+    background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(45deg, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(45deg, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 100vh;
     color: white;
 	font-family: 'Prompt', sans-serif;
 	
@@ -151,40 +154,55 @@ body {
 	.mainGame h1 {
 		font-size: 1.4rem;
 		text-align: center;
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 1.75rem;
 		width: 80%;
+		letter-spacing: 0.05rem;
 	}
 
 	.mainGame ol {
 	    display: flex;
 		flex-direction: column;
-		gap: 5px;
-		list-style: decimal;
+		gap: 3px;
+		
+		text-align: center;
 	}
 
 
 	.mainGame ol li {
 		color: white;
 		font-size: 1rem;
-		font-weight: 300;
+		font-weight: 200;
+		border: 1px solid white;
+		padding: 5px 30px;
+		
 	}
 
 	.mainGame ul {
 		display: flex;
-		list-style: decimal;
 		flex-direction: column;
 		gap: 5px;
 	}
 
 	.wrong {
 		color: red;
+		border: 1px solid red;
 		text-decoration: line-through;
-		font-weight: 200;
+		font-weight: 400;
+		padding: 5px 30px;
+		text-align: center;
+		background: rgb(72, 31, 31);
+		text-transform: capitalize;
 	}
 
 	.correct {
 		color: rgb(0, 255, 21);
+		border: 1px solid rgb(0, 255, 21);
+		padding: 5px 30px;
+		font-weight: 400;
+		text-align: center;
+		background: rgb(26, 52, 19);
+		text-transform: capitalize;
 	}
 
 	.search {
@@ -205,6 +223,7 @@ body {
 
 	input::placeholder{
 		letter-spacing: 0.05rem;
+		text-transform: uppercase;
 	}
 
 	input[type=text]{
